@@ -1,6 +1,6 @@
-"""
-Created by: Yonglan Liu
-"""
+# Copyright (c) 2026 Yonglan Liu
+# Licensed under the MIT License.
+
 
 from rdkit import Chem
 from rdkit.Chem.Scaffolds import MurckoScaffold

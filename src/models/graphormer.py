@@ -4,6 +4,10 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 # Licensed under the MIT license found in the LICENSE file.
 
+# Modifications:
+# - Added soft sharing module
+
+
 import logging
 from typing import Callable, Optional
 
@@ -206,7 +210,6 @@ class GraphormerEncoder(nn.Module):
 
         z = self.layer_norm(self.activation_fn(self.lm_head_transform_weight(x)))
 
-        ##---------------Edit by Yonglan Liu----------------------------
         # If soft sharing is enabled, pass z (not batched_data) to the soft-share module
         if self.soft_share is not None:
             # soft_share.forward accepts z directly now

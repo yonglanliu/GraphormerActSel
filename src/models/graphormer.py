@@ -203,6 +203,7 @@ class GraphormerEncoder(nn.Module):
 
         z = self.layer_norm(self.activation_fn(self.lm_head_transform_weight(x)))
 
+        ##---------------Edit by Yonglan Liu----------------------------
         # If soft sharing is enabled, pass z (not batched_data) to the soft-share module
         if self.soft_share is not None:
             # soft_share.forward accepts z directly now
@@ -210,6 +211,7 @@ class GraphormerEncoder(nn.Module):
         
         # Otherwise continue with existing LM head behavior
         x=z
+        ##--------------------------------------------------------------
         if self.embed_out is not None:
             x = self.embed_out(x)
 

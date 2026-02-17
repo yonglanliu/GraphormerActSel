@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pretrained on graphormer"
+version = "0.1.0"
+description = "Custom Graphormer-based models"
+authors = [{ name = "Your Name" }]
+requires-python = ">=3.10,<3.11"
+
+# These are normal pip deps that install cleanly from PyPI
+dependencies = [
+  "omegaconf>=2.3",
+  "hydra-core>=1.3",
+  "rdkit-pypi",
+]
+
+[project.optional-dependencies]
+# Keep GPU stack optional because it requires custom wheel indexes/links
+# You already install these manually (recommended on HPC).
+gpu = [
+  "torch==2.1.*",
+  "torchvision==0.16.*",
+  "torchaudio==2.1.*",
+  "dgl",
+  "torch-geometric",
+  "pyg-lib",
+  "torch-scatter",
+  "torch-sparse",
+  "torch-cluster",
+  "torch-spline-conv",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

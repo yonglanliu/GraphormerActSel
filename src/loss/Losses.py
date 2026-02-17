@@ -1,7 +1,5 @@
-"""
-Created by: Yonglan Liu
-Date: 2026-02-10
-"""
+# Copyright (c) 2026 Yonglan Liu
+# Licensed under the MIT License.
 
 import torch
 import torch.nn.functional as F

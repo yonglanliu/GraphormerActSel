@@ -1,8 +1,3 @@
-## Third-Party Code
-
-## This code from the ogb Team
-
-## ProjectName (https://github.com/snap-stanford/ogb)
 # Copyright (c) 2019 OGB Team
 # Licensed under the MIT License.
 

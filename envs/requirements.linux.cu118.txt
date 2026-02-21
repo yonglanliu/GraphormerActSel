@@ -1,0 +1,31 @@
+# ---- Core ----
+omegaconf
+hydra-core
+tqdm
+pyyaml
+pandas
+scikit-learn
+fastparquet
+pyarrow
+
+# RDKit via pip is less reliable than conda-forge; prefer conda if possible
+rdkit-pypi
+
+# ---- Torch CUDA 11.8 (Linux only) ----
+--index-url https://download.pytorch.org/whl/cu118
+torch==2.1.*
+torchvision==0.16.*
+torchaudio==2.1.*
+
+# ---- DGL CUDA 11.8 ----
+-f https://data.dgl.ai/wheels/cu118/repo.html
+dgl
+
+# ---- PyG compiled ops for torch 2.1.0 + cu118 ----
+-f https://data.pyg.org/whl/torch-2.1.0+cu118.html
+pyg-lib
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+torch-geometric

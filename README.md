@@ -56,7 +56,7 @@ cd GraphormerActSel
 
 ```bash
 conda env create -f envs/environment.macos.yml
-conda activate graphormerSelAct
+conda activate graphormerActSel
 pip install -e .
 python -c "import torch; print(torch.__version__); print('mps available:', hasattr(torch.backends,'mps') and torch.backends.mps.is_available())"
 ```
@@ -67,15 +67,15 @@ conda installs CUDA-enabled PyTorch, then pip installs PyG/DGL wheels matching t
 
 ```bash
 conda env create -f envs/environment.linux.cu118.yml
-conda activate graphormerSelAct
+conda activate graphormerActSel
 bash envs/install_linux_cuda.sh
 ```
 
 #### 3) Pure pip option (Linux CUDA only) -- envs/requirements.linux.cu118.txt
 
 ```bash
-python3.10 -m venv graphormerSelAct
-source graphormerSelAct/bin/activate
+python3.10 -m venv graphormerActSel
+source graphormerActSel/bin/activate
 pip install -U pip
 pip install -r requirements.linux.cu118.txt
 pip install -e .
@@ -95,14 +95,14 @@ If there is GPU, use CUDA installation, otherwise use CPU installation.
 
 ```bash
 conda env create -f envs/environment.windows.cu118.yml
-conda activate graphormerSelAct
-.\install_windows_cuda.ps1
+conda activate graphormerActSet
+.\envs\install_windows_cuda.ps1
 ```
 
-#### Windows CPU-only — environment.windows.cpu.yml
+#### Windows CPU-only — envs/environment.windows.cpu.yml
 
 ```bash
-conda env create -f environment.windows.cpu.yml
-conda activate graphormerSelAct
+conda env create -f envs/environment.windows.cpu.yml
+conda activate graphormerActSel
 pip install -e .
 ```

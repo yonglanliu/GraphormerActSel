@@ -108,6 +108,65 @@ pip install -e .
 ```
 ---
 
+## Training
+
+Modify the configuration in <code>bash/train.sh</code>, then launch training:
+
+### On HPC (Slurm)
+
+```bash
+sbatch bash/train.sh 
+```
+
+### On Local Machine
+
+```bash
+source bash/train.sh 
+```
+
+This will start the multi-task training pipeline, including activity regression and selectivity objectives.
+
+## Evaluation
+
+Modify <code>bash/auto_eval.sh</code> to specify the checkpoint and dataset, then run:
+
+```bash
+source bash/auto_eval.sh
+```
+
+This script will:
+* Load the specified trained checkpoint
+* Generate predictions on the evaluation set
+* Compute performance metrics for:
+* Activity (per isoform)
+* Selectivity (pairwise comparisons)
+* Save evaluation results and logs
+
+
+## Model Deployment for Inference
+
+### 1) Streamlit Web Interface
+
+```bash
+pip install streamlit
+```
+
+Modify <code>app.py</code> to point to your trained checkpoint, then launch: 
+
+```bash
+streamlit run app.py
+```
+
+After running the command, a local URL will be displayed in the terminal. Open it in your browser to access the dashboard.
+
+Using the Interface
+* Enter a valid SMILES string in the input box
+* The model will automatically:
+  * Predict pIC50 for each isoform
+	* Compute predicted selectivity between isoforms
+* Results will be displayed interactively in the dashboard
+  
+
 ## Acknowledgment
 
 This project builds upon the Graphormer implementation by Microsoft Research.

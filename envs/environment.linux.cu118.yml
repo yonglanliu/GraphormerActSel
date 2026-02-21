@@ -1,4 +1,4 @@
-name: graphormerSelAct
+name: graphormerActSel
 channels:
   - pytorch
   - nvidia

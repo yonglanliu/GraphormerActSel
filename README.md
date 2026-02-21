@@ -106,3 +106,25 @@ conda env create -f envs/environment.windows.cpu.yml
 conda activate graphormerActSel
 pip install -e .
 ```
+---
+
+## Acknowledgment
+
+This project builds upon the Graphormer implementation by Microsoft Research.
+
+Original repository:
+[https://github.com/microsoft/Graphormer](https://github.com/microsoft/Graphormer)
+
+### Modifications
+
+This repository extends the original Graphormer implementation with the following enhancements:
+	-	Multi-task learning framework for simultaneous prediction of compound activity and isoform selectivity across protein families
+	-	Hybrid objective function combining regression loss with pairwise selectivity ranking loss
+	-	Explicit shortest-path computation between atom pairs for improved structural encoding
+	-	Refactoring to native PyTorch modules, replacing framework-specific components for improved flexibility and maintainability
+	-	Adapter-based soft parameter sharing to enable efficient multi-target modeling within the same backbone
+	-	Customized training pipeline, including multi-task scheduling and evaluation strategies
+	-	Replacement of the quant-noise implementation with the original fairseq (Meta/Facebook) version for consistency and stability
+	-	Custom data processing pipeline tailored for structure-aware molecular modeling
+
+---

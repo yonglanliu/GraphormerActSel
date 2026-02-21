@@ -3,8 +3,8 @@
 You can provide your own dataset to train and evaluate the model for your specific use case.
 
 The dataset must contain:
-	*	SMILES string of each compound
-	*	pIC50 values against multiple isoforms (one column per isoform)
+*	SMILES string of each compound
+*	pIC50 values against multiple isoforms (one column per isoform)
 
 Required Format:
 

@@ -129,7 +129,7 @@ Both licensed under the MIT License.
 This repository extends the original Graphormer implementation with the following enhancements:
 
 * Multi-task learning framework for simultaneous prediction of compound activity and isoform selectivity across protein families
-* Hybrid objective function combining regression loss with pairwise selectivity ranking loss
+* Hybrid objective function combining regression loss with pairwise selectivity loss
 * Explicit shortest-path computation between atom pairs for improved structural encoding
 * Refactoring to native PyTorch modules, replacing framework-specific components for improved flexibility and maintainability
 * Adapter-based soft parameter sharing to enable efficient multi-target modeling within the same backbone

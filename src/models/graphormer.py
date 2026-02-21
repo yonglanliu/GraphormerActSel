@@ -23,8 +23,6 @@ from modules.soft_sharing import (
     GateSoftShareModule
 )
 
-from pretrain.load_pretrained_model import load_pretrained_state_dict
-
 logger = logging.getLogger(__name__)
 
 # -----------------------------
@@ -90,15 +88,6 @@ class GraphormerModel(nn.Module):
             self.apply(init_graphormer_params)
 
         self.encoder_embed_dim = cfg.encoder_embed_dim
-
-        # optional pretrained loading
-        if getattr(cfg, "pretrained_model_name", "none") != "none":
-            state_dict = load_pretrained_state_dict(cfg.pretrained_model_name)
-            self.load_state_dict(state_dict, strict=False)
-
-            if not getattr(cfg, "load_pretrained_model_output_layer", False):
-                if hasattr(self.encoder, "reset_output_layer_parameters"):
-                    self.encoder.reset_output_layer_parameters()
 
     def max_nodes(self):
         return self.encoder.max_nodes()

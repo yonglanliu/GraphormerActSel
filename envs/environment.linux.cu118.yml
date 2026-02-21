@@ -1,0 +1,46 @@
+name: graphormerSelAct
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+
+  # CUDA-enabled PyTorch stack via conda
+  - pytorch=2.1.*
+  - torchvision=0.16.*
+  - torchaudio=2.1.*
+
+  # Provides CUDA runtime libs inside the env (no system CUDA needed, but driver still required)
+  - pytorch-cuda=11.8
+
+  # Core scientific stack
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+
+  # RDKit via conda-forge (reliable)
+  - rdkit
+
+  # IO
+  - fastparquet
+  - pyarrow
+
+  # Utilities
+  - tqdm
+  - pyyaml
+
+  # Build tools (helpful if something falls back to source)
+  - cmake
+  - ninja
+  - gcc_linux-64
+  - gxx_linux-64
+
+  - pip:
+      - omegaconf
+      - hydra-core
+
+      # NOTE: DGL + PyG compiled ops are installed in post-install script below
+      # to ensure they match torch/cuda exactly.

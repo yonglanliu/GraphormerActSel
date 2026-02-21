@@ -16,10 +16,10 @@ model = load_pretrained_model("graphormer-base-pcqm4mv1")
 
 ### 2. Manual Download (Direct Links)
 
-For manual installation, use the following commands to download the checkpoints. We recommend placing them in a ./checkpoints directory.
+For manual installation, use the following commands to download the checkpoints. We recommend placing them in a ./checkpoint directory.
 
-| Model | Variant |	Source | Command|
-|---|---|---|---|
-| Graphormer-Base |	PCQM4M-LSC	| wget | https://graphormer.blob.core.windows.net/lp-models/graphormer_base_pcqm4m_v2.pt |
-| Graphormer-Slim	| PCQM4M-LSC	| curl | -O https://graphormer.blob.core.windows.net/lp-models/graphormer_slim_pcqm4m_v2.pt |
+```bash
+wget https://huggingface.co/clefourrier/graphormer-base-pcqm4mv1/resolve/main/pytorch_model.bin -O graphormer-base-pcqm4mv1.pt
+wget https://huggingface.co/clefourrier/graphormer-base-pcqm4mv2/resolve/main/pytorch_model.bin -O graphormer-base-pcqm4mv2.pt
+```
 

@@ -1,0 +1,28 @@
+name: graphormerActSel
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+
+  # CPU PyTorch (no CUDA)
+  - pytorch=2.1.*
+  - torchvision=0.16.*
+  - torchaudio=2.1.*
+
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - rdkit
+  - fastparquet
+  - pyarrow
+  - tqdm
+  - pyyaml
+
+  - pip:
+      - omegaconf
+      - hydra-core
+      - torch-geometric
+      - dgl

@@ -3,8 +3,8 @@
 You can provide your own dataset to train and evaluate the model for your specific use case.
 
 The dataset must contain:
-	•	SMILES string of each compound
-	•	pIC50 values against multiple isoforms (one column per isoform)
+	*	SMILES string of each compound
+	*	pIC50 values against multiple isoforms (one column per isoform)
 
 Required Format:
 
@@ -20,6 +20,7 @@ Required Format:
 *	Units must be pIC50 (not IC50)
 
 **Notes**
+
 *	Ensure SMILES strings are valid and sanitized (RDKit-compatible).
 *	For multi-task training, each isoform column is treated as an independent regression task.
 *	Selectivity losses (if enabled) are computed based on pairwise differences between isoform activities.

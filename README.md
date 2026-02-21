@@ -165,7 +165,68 @@ Using the Interface
   * Predict pIC50 for each isoform
   * Compute predicted selectivity between isoforms
 * Results will be displayed interactively in the dashboard
-  
+
+### 2) Single SMILES (CLI)
+
+You can run inference directly from the command line:
+
+```bash
+python infer.py \
+  --checkpoint checkpoints/best_model.pt \
+  --smiles "CCOc1ccc2nc(S(N)(=O)=O)sc2c1"
+```
+
+**Output**
+
+The script will:
+* Predict pIC50 for each isoform
+* Compute pairwise selectivity
+* Print results in a structured format
+
+```bash
+Predicted Activity:
+  isoformA: 8.12
+  isoformB: 6.45
+  isoformC: 5.91
+
+Predicted Selectivity:
+  A vs B: +1.67
+  A vs C: +2.21
+  B vs C: +0.54
+```
+
+### 3) Batch Inference (CSV Input)
+
+You can also run inference on a file:
+
+```bash
+python infer.py \
+  --checkpoint checkpoints/best_model.pt \
+  --input data/test.csv \
+  --output predictions.csv
+```
+
+**Input Format**
+
+```bash
+smiles
+CCOc1ccc2nc(S(N)(=O)=O)sc2c1
+CCN(CC)CCOc1ccc2nc(S(N)(=O)=O)sc2c1
+```
+
+**Output Format**
+
+```bash
+smiles,pIC50_isoformA,pIC50_isoformB,pIC50_isoformC,sel_A_B,sel_A_C,sel_B_C
+CCOc1ccc2nc(S(N)(=O)=O)sc2c1,8.12,6.45,5.91,1.67,2.21,0.54
+...
+```
+
+* Inference runs in torch.no_grad() mode
+*	GPU will be used automatically if available
+*	Missing isoform data is not required at inference time
+*	Selectivity is computed directly from predicted pIC50 values
+
 
 ## Acknowledgment
 

@@ -1,7 +1,6 @@
 ## Download Graphormer's Weights
 
-To download Graphormer weights, you can use the initialization script found in
-<a href="https://github.com/microsoft/Graphormer/blob/main/graphormer/pretrain/init.py">__init__.py</a>. 
+To download Graphormer weights, you can use <a href="https://github.com/microsoft/Graphormer/blob/main/graphormer/pretrain/__init__.py">their initialization script</a>. 
 Alternatively, you can download the pre-trained models directly using <code>wget</code> or <code>curl</code>.
 
 ### 1. Using the Python API

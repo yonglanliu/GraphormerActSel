@@ -1,0 +1,36 @@
+name: graphormerSelAct
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+
+  # CUDA-enabled PyTorch
+  - pytorch=2.1.*
+  - torchvision=0.16.*
+  - torchaudio=2.1.*
+  - pytorch-cuda=11.8
+
+  # Core stack
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+
+  # RDKit is much better via conda on Windows
+  - rdkit
+
+  # IO
+  - fastparquet
+  - pyarrow
+
+  # Utilities
+  - tqdm
+  - pyyaml
+
+  - pip:
+      - omegaconf
+      - hydra-core
+      # We'll install DGL + PyG ops after env creation (see script)

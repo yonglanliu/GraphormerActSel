@@ -8,7 +8,7 @@ The dataset must contain:
 
 Required Format:
 
-| smiles | pIC50_isoformA | pIC50_isoformB | pIC50_isoformC |
+| SMILES | pIC50_isoformA | pIC50_isoformB | pIC50_isoformC |
 |---|---|---|---|
 | CCOc1ccc2nc(S(N)(=O)=O)sc2c1 | 7.85 | 6.32 | 5.91 |
 | CCN(CC)CCOc1ccc2nc(S(N)(=O)=O)sc2c1 | NaN | 7.45 |6.10 |

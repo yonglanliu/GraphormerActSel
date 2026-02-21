@@ -163,7 +163,7 @@ Using the Interface
 * Enter a valid SMILES string in the input box
 * The model will automatically:
   * Predict pIC50 for each isoform
-	* Compute predicted selectivity between isoforms
+  * Compute predicted selectivity between isoforms
 * Results will be displayed interactively in the dashboard
   
 

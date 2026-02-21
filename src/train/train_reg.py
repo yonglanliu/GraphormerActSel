@@ -1,4 +1,4 @@
-# Copyright (c) 2026 Yonglan Liu
+# Copyright (c) Yonglan Liu
 # Licensed under the MIT License.
 
 import os

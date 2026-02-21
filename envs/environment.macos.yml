@@ -1,0 +1,48 @@
+name: graphormerSelAct
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  # PyTorch on macOS is CPU/MPS (no CUDA)
+  - pytorch>=2.1,<2.2
+  - torchvision>=0.16,<0.17
+  - torchaudio>=2.1,<2.2
+
+  # Core scientific stack
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+
+  # RDKit (best installed via conda-forge on macOS)
+  - rdkit
+
+  # IO
+  - fastparquet
+  - pyarrow
+  - parquet-tools
+
+  # Utilities
+  - tqdm
+  - pyyaml
+
+  # If you need build tools
+  - cmake
+  - ninja
+
+  - pip:
+      # Config + CLI
+      - omegaconf
+      - hydra-core
+
+      # If you use Weights & Biases etc. (optional)
+      # - wandb
+
+      # PyG on macOS: CPU wheels usually install fine via pip
+      - torch-geometric
+
+      # DGL on macOS is typically CPU-only; pip may work depending on version
+      # If it fails, remove it and use Linux for DGL GPU.
+      - dgl

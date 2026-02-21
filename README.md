@@ -115,7 +115,16 @@ This project builds upon the Graphormer implementation by Microsoft Research.
 Original repository:
 [https://github.com/microsoft/Graphormer](https://github.com/microsoft/Graphormer)
 
-### Modifications
+It incorporates code from:
+
+- Graphormer (Microsoft Research)
+- fairseq (Meta AI)
+
+Both licensed under the MIT License.
+
+---
+
+## Modifications
 
 This repository extends the original Graphormer implementation with the following enhancements:
 

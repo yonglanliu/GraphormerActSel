@@ -39,7 +39,7 @@ The model supports multi-task and single-task training modes.
 
 ---
 
-## Installation
+## Set up
 
 ### 1. Clone the repository
 
@@ -48,6 +48,61 @@ git clone https://github.com/yonglanliu/GraphormerActSel.git
 cd GraphormerActSel
 ```
 
+---
+
+### 2. Installation
+
+#### 1) macOS —- envs/environment.macos.yml
+
 ```bash
-source install.sh
+conda env create -f envs/environment.macos.yml
+conda activate graphormerSelAct
+pip install -e .
+python -c "import torch; print(torch.__version__); print('mps available:', hasattr(torch.backends,'mps') and torch.backends.mps.is_available())"
+```
+
+#### 2) Linux CUDA -- envs/install_linux_cuda.sh
+
+conda installs CUDA-enabled PyTorch, then pip installs PyG/DGL wheels matching that torch+cuda.
+
+```bash
+conda env create -f envs/environment.linux.cu118.yml
+conda activate graphormerSelAct
+bash envs/install_linux_cuda.sh
+```
+
+#### 3) Pure pip option (Linux CUDA only) -- envs/requirements.linux.cu118.txt
+
+```bash
+python3.10 -m venv graphormerSelAct
+source graphormerSelAct/bin/activate
+pip install -U pip
+pip install -r requirements.linux.cu118.txt
+pip install -e .
+```
+
+#### 4) Windows 
+
+**Note: Quick check if there is GPU**
+
+```bash
+nvidia-smi
+```
+
+If there is GPU, use CUDA installation, otherwise use CPU installation.
+
+#### NVIDIA GPU (CUDA 11.8) —- envs/environment.windows.cu118.yml
+
+```bash
+conda env create -f envs/environment.windows.cu118.yml
+conda activate graphormerSelAct
+.\install_windows_cuda.ps1
+```
+
+#### Windows CPU-only — environment.windows.cpu.yml
+
+```bash
+conda env create -f environment.windows.cpu.yml
+conda activate graphormerSelAct
+pip install -e .
 ```

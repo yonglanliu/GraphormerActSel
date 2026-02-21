@@ -15,11 +15,11 @@ Required Format:
 | Cc1ccc2nc(S(N)(=O)=O)sc2c1 | 6.95 | 5.88 | NaN |
 
 
-•	Missing values can be left blank or set as NaN
-•	Column names should clearly indicate isoform identity
-•	Units must be pIC50 (not IC50)
+*	Missing values can be left blank or set as NaN
+*	Column names should clearly indicate isoform identity
+*	Units must be pIC50 (not IC50)
 
 **Notes**
-•	Ensure SMILES strings are valid and sanitized (RDKit-compatible).
-•	For multi-task training, each isoform column is treated as an independent regression task.
-•	Selectivity losses (if enabled) are computed based on pairwise differences between isoform activities.
+*	Ensure SMILES strings are valid and sanitized (RDKit-compatible).
+*	For multi-task training, each isoform column is treated as an independent regression task.
+*	Selectivity losses (if enabled) are computed based on pairwise differences between isoform activities.

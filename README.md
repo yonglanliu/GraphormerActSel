@@ -77,7 +77,7 @@ bash envs/install_linux_cuda.sh
 python3.10 -m venv graphormerActSel
 source graphormerActSel/bin/activate
 pip install -U pip
-pip install -r requirements.linux.cu118.txt
+pip install -r envs/requirements.linux.cu118.txt
 pip install -e .
 ```
 

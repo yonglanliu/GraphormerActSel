@@ -15,7 +15,7 @@ model = load_pretrained_model("graphormer-base-pcqm4mv1")
 
 ### 2. Manual Download (Direct Links)
 
-For manual installation, use the following commands to download the checkpoints. We recommend placing them in a ./checkpoint directory.
+For manual installation, use the following commands to download the checkpoints. Recommend placing them in a ./checkpoint directory.
 
 ```bash
 wget https://huggingface.co/clefourrier/graphormer-base-pcqm4mv1/resolve/main/pytorch_model.bin -O graphormer-base-pcqm4mv1.pt

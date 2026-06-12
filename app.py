@@ -19,7 +19,7 @@ def load_model():
         cfg=cfg,
         device="cuda:0" if torch.cuda.is_available() else "cpu",
         cache_root="./streamlit_cache",
-        task_names=["ISOA", "ISOB", "ISOC"],  # adjust
+        task_names=["SubtypeA", "SubtypeB", "SubtypeC"],  # adjust
     )
     return predictor
 
